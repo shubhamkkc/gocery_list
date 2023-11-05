@@ -25,7 +25,7 @@ class _GroceriesState extends State<Groceries> {
   }
 
   var url = Uri.https(
-      'grocerylist-59ff0-default-rtdb.firebaseio.com', 'shopingList.json');
+      'grocery-6c49b-default-rtdb.firebaseio.com', 'shopingList.json');
 
   Future<void> loadGroceryList() async {
     var response = await http.get(url);
@@ -64,7 +64,7 @@ class _GroceriesState extends State<Groceries> {
   }
 
   void _deleteItem(GroceryItem item) {
-    var url = Uri.https('grocerylist-59ff0-default-rtdb.firebaseio.com',
+    var url = Uri.https('grocery-6c49b-default-rtdb.firebaseio.com',
         'shopingList/${item.id}.json');
     http.delete(url);
     setState(() {
@@ -113,7 +113,12 @@ class _GroceriesState extends State<Groceries> {
               );
             }),
       );
+    } else
+    {
+      content=Center(child: Text("your Grocery list is empty"),);
+      
     }
+
 
     return Scaffold(
         appBar: AppBar(

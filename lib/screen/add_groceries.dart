@@ -21,7 +21,7 @@ class _AddGroceriesState extends State<AddGroceries> {
   String quantity = "";
   var _selectedCategory = categories[Categories.vegetables]!;
   var url = Uri.https(
-      'grocerylist-59ff0-default-rtdb.firebaseio.com', 'shopingList.json');
+      'grocery-6c49b-default-rtdb.firebaseio.com', 'shopingList.json');
 
   Future<void> _onSubmit() async {
     if (_formKey.currentState!.validate()) {
